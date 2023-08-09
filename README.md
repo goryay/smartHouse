@@ -11,5 +11,5 @@
 *4.* Взаимодействие между API и UI по протоколу прикладного уровня HTTP.
 
 ### Графический интерфейс пользователя
-![image](https://github.com/goryay/smartHouse/assets/25865175/e9b1b66f-a05d-4561-acb0-dd0bf9c18ac5)
+![Image alt](https://github.com/goryay/smartHouse/blob/main/Screenshot%202023-08-10%20011624.png)
 
