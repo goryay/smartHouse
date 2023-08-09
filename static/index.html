@@ -1,0 +1,53 @@
+<!doctype html>
+ <html class="no-js" lang="">
+ <head>
+  <meta charset="utf-8">
+  <title>SmartHouse</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="css/normalize.css" >
+  <link rel="stylesheet" href="css/main.css" >
+  <meta name="theme-color" content="#fafafa">
+ </head>
+ <body>
+ 
+ <div class="top">
+ <h1>RaspberryPi</h1>
+<img src="img/rpi.png" alt="doc">
+</div>
+
+  
+  <h3 class="txt">Light</h3>
+  <form method="post" action="/led">
+   <input class="floating-button" type="submit" value="on" name="on">
+   <input class="floating-button" type="submit" value="off" name="off"/>
+  </form>
+
+  <h3 class="txt">Video Streaming</h3>
+<p align="center">
+<img alt="Video Streaming" src="{{ url_for('video_feed') }}" width="50%"/></p>
+
+<!--  <div id="g1" class="gauge"></div>-->
+<h3 class="txt">Degree</h3>
+<p id="degree"> </p>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+setInterval(function() {
+$.ajax({
+  url: "/degree",
+  success: function( result ) {
+    $( "#degree" ).html( "<strong>" + result + "</strong> degrees" );
+  }
+});
+},1000);
+</script>
+<!--      <a href="camera.html" title="Camera">Camera</a>-->
+ </body>
+ </html>
